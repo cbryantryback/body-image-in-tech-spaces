@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Standing Desks and Free Pizza: Body Image Negotiations in Tech Spaces</title>
+
+        <meta name="description" content="Exploring the complex landscape of body image negotiation in tech-specific cultural spaces.">
+        <meta name="author" content="Christine Bryant-Ryback">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/simple.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <!-- light editor --><link rel="stylesheet" href="lib/css/light.css">
+        <!-- dark editor <link rel="stylesheet" href="lib/css/dark.css">-->
+        <!-- <link rel="stylesheet" href="lib/css/zenburn.css"> -->
+
+        <link rel="stylesheet" href="plugin/accessibility-helper/css/accessibility-helper.css">
+
+        <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+        <script>
+            if( window.location.search.match( /print-pdf/gi ) ) {
+                var link = document.createElement( 'link' );
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = 'css/print/pdf.css';
+                document.getElementsByTagName( 'head' )[0].appendChild( link );
+            }
+        </script>
+
+        <!-- If use the PDF print sheet so students can print slides-->
+        <link rel="stylesheet" href="css/print/pdf.css" type="text/css" media="print">
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <h1>Standing Desks<br><small>and</small><br>Free Pizza</h1>
+                    <h2><small>Body Image Negotiations in Tech Spaces</small></h2>
+                </section>
+
+                <section>
+                    <h2>Christine Bryant-Ryback</h2>
+                    <p>JS web applications @ <a href="http://willowtreeapps.com">WillowTree</a></p>
+                    <p class="fragment">... not a doctor ...</p>
+
+                    <aside class="notes">
+                        I’m Christine Bryant-Ryback, and I am a web application developer with an undergraduate Psychology minor. Making sure we’re all clear that I am not qualified to give medical or therapeutic advice of any kind.
+                    </aside>
+                </section>
+
+        <!-- Elements entering one at a time-->
+                <section>
+                    <h2>Content Warnings</h2>
+                    <ul>
+                        <li class="fragment">intentional weight loss and the medicalization of weight</li>
+                        <li class="fragment">chronic illness, gender dysphoria, eating disorders, and disordered eating</li>
+                        <li class="fragment">current and historical racism, classism, sexism, weight discrimination, and ableism</li>
+                    </ul>
+
+                    <aside class="notes">
+                        I also have some content warnings. My talk is going to discuss intentional weight loss and the medicalization of weight, sometimes in detail; I will be discussing the concept of body changes, including those related to gender transition; my talk will reference chronic illness, eating disorders, and disordered eating, but not in extensive detail; and my talk is going to include current and historical racism, classism, sexism, weight discrimination, and ableism, sometimes in detail. I will be quoting one ableist term.
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>What is body positivity, even?</h2>
+                    <aside class="notes">
+                        So, pizza and standing desks. And body image. Not just body image, but body positivity, no less.
+                    </aside>
+                </section>
+
+                <section>
+                    <h2><code class="javascript">this</code></h2>
+                    <p class="fragment">... because JavaScript, get it ...</p>
+                    <aside class="notes">
+                        In figuring out how to approach this piece, I owe a lot to a talk I saw at last year’s CascadiaFest by Ashley Williams, called “If you wish to learn ES6/2015 from scratch, you must first invent the universe." What does a JavaScript talk have to do with body image?
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>“If you wish to make an apple pie from scratch, you must first invent the universe.”</h2>
+                    <img src="img/apple-pie.jpg" alt="Carl Sagan with an actual apple pie, from Cosmos" class="noborder"/>
+                    <aside class="notes">
+                        The title of her talk is a reference to a quote by Carl Sagan: “If you wish to make an apple pie from scratch, you must first invent the universe.” I suppose for my talk, we’ll go with a pizza pie, right?
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>“If you wish to make <del>an apple pie</del> <strong>pizza</strong> from scratch, you must first invent the universe.”</h2>
+                    <img src="img/pizza-sagan.jpg" alt="A Carl Sagan quote about imagination, but they changed it to pizza" class="noborder"/>
+                    <aside class="notes">
+                        Our apples, or in this case, our tomatoes, the building blocks of this thing we’re about to create, they go back a long ways, through many steps of cultivation and growth, intention and accident.
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Abstractions and pattern-matching</h2>
+                    <aside class="notes">
+                        Oversimplifying a bit, her talk was about programming abstractions from a teaching perspective. We create abstractions of bigger, more complicated concepts, and we use those abstractions to match patterns. When we teach beginners, we need to be careful about which abstractions we collectively use, because ultimately those matched patterns have consequences. Sometimes the way our abstractions were developed makes it extremely hard to figure out what purpose they originally served. For beginners, and for us as teachers.
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>If you want to talk about body positivity, you must first deconstruct the way we talk about bodies.</h2>
+                    <aside class="notes">
+                        So if I want to talk to you about body positivity, and if we're being generous enough to assume I can do that, I have to invent a universe where the way we talk about bodies makes some kind of sense.
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>P.S. estimates are hard.</h2>
+                    <aside class="notes">
+                        I guesstimated that I could do this in 20 minutes. Typical dev.
+                    </aside>
+                </section>
+
+                <section>
+                    <img src="img/embodied-agent.png" alt="Examples of robot AI embodiment" class="noborder"/>
+                    <p><small>Hoffman and Pfeifer (2012). <a href="http://arxiv.org/abs/1202.0440">The Implications of Embodiment for Behavior and Cognition: Animal and Robotic Case Studies.</a></small></p>
+                    <aside class="notes">In the research field of artificial intelligence (shoutout to everybody writing bots right now) (so hot right), there’s the concept of an embodied agent. Basically what that means is that the AI interface is given a body, a face, and uses that to communicate nonverbally alongside methods like text or voice. Sometimes that means a physical robot.</aside>
+                </section>
+
+                <section>
+                    <img src="img/osfeelsbot.png" alt="OSFeels mascot, Feelsbot" class="noborder"/>
+                    <aside class="notes">Sometimes it’s as simple as a virtual representation of a body.</aside>
+                </section>
+
+                <section>
+                    <img src="img/ex-machina.jpg" alt="A still from the movie Ex Machina, showing humanoid robot Ava" class="noborder"/>
+                    <p><small>© 2015 - Universal Pictures International</small></p>
+                    <aside class="notes">Eye contact. Gestures. Body posture. They turn towards a thing to show they’re interested in it. They nod to show they’re listening. These embodied agents convey meaning in ways that other kinds of AI may not.</aside>
+                </section>
+
+                <section>
+                    <h2>Embodied agents and agency</h2>
+                    <aside class="notes">The people who write the bots, who make AI, also have bodies. You and I have bodies. What meanings do our bodies convey? And what control do we have over those messages?</aside>
+                </section>
+
+                <section>
+                    <h2>Food = code</h2>
+                    <aside class="notes">Instead of being maintained by code, our bodies are maintained by food. Food also conveys meaning. Where we live. What we believe. Who we’ve met. What resources are available. What we jobs we have.</aside>
+                </section>
+
+                <section>
+                    <h2>Culture = code</h2>
+                    <p class="fragment"><a href="http://www.lifehack.org/articles/work/8-necessities-successful-companies-provide-their-break-rooms.html"><em>8 Necessities Successful Companies Provide In Their Break Rooms</em></a></p>
+                    <p class="fragment"><a href="https://www.careerbliss.com/advice/the-top-20-snacks-to-feed-your-tech-team/"><em>Top 20 Snacks to Turbocharge Your Tech Team</em></a></p>
+                    <p class="fragment"><a href="http://blog.smartlogic.io/2012/12/20/3288-slices-the-baltimore-tech-communitys-2012-growth-measured-in-pizza"><em>3288 Slices: The Baltimore Tech Community’s Growth Measured in Pizza </em></a></p>
+                    <aside class="notes">
+                        8 Necessities Successful Companies Provide In Their Break Rooms. 3288 Slices: The Baltimore Tech Community’s Growth Measured in Pizza . We, and our coworkers, our peers, our bosses, we see and we share articles like these about tech culture. Staying on top of trends, whether it’s Facebook’s Messenger bots or what Airbnb serves their employees for lunch, can impact our careers, our businesses, our tech communities.
+                    </aside>
+                </section>
+
+                <section>
+                    <h2><em>The High Cost of Free Office Snacks</em></h2>
+                    <blockquote cite="http://opinionator.blogs.nytimes.com/2012/11/17/the-high-cost-of-free-office-snacks/">
+                        <p>"Technology companies are famous for providing free food for their employees. Office areas stocked with snacks are great for morale and promote random interactions that often generate new ideas. </p>
+                        <p class="fragment">"The problem is that free food, if it’s the wrong kind, is not really free. It can kill you — or at least make you fat and unhealthy."</p>
+                        <cite>— Ezekiel J. Emanuel, 2012</cite>
+                    </blockquote>
+                    <aside class="notes">
+                        From "The High Cost of Free Office Snacks": "Technology companies are famous for providing free food for their employees. Office areas stocked with snacks are great for morale and promote random interactions that often generate new ideas.  The problem is that free food, if it’s the wrong kind, is not really free. It can kill you — or at least make you fat and unhealthy." In the opening of this article, ideas are generated by snacks, and snacks can kill you; tech employees are somehow involved. Not those employees, but you, the reader, you specifically are implicated, and if your body is fat, the meaning that your embodiment is conveying is apparently sickness and death.
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Culture = sick</h2>
+                    <blockquote>
+                        <p>“The word <strong>obesogenic</strong> first appeared around 1996. It was developed from a blend of the word <em>obese</em> and, by analogy with terms like <em>carcinogenic</em> (causing cancer), <em>-genic</em> as a suffix meaning 'tending to create'.”</p>
+                        <cite>- Kerry Maxwell, author of <em>Brave New Words</em></cite>
+                    </blockquote>
+                    <aside class="notes">
+                        We’re told that there’s an obesity crisis today. That fatness is a health epidemic, a literal disease. Diseases are scary.
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Culture = sick</h2>
+                    <blockquote>
+                        <p>"Obesity seems to me very little understood or properly appreciated by the faculty and the public generally, or the former would long ere this have hit upon the cause for so lamentable a disease, and applied effective remedies, whilst the latter would have spared their injudicious indulgence in remarks and sneers"</p>
+                        <cite>- William Banting, author of <em>Letter on Corpulence</em>, 1863</cite>
+                    </blockquote>
+                    <aside class="notes">
+                        You might remember what I said about the dangers of abstractions. Because we've actually been talking about this for a long time now. And we have a lot of legacy code.
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Morality and fear</h2>
+                    <div class="fragment">
+                        <h3>Everything is spiders</h3>
+                        <img src="img/spiders.png" alt="Hyperbole and a Half: everything is spiders" class="noborder"/>
+                        <p><small>- <a href="http://hyperboleandahalf.blogspot.com/2013/05/depression-part-two.html">Hyperbole and a Half</a>, Allie Brosh</small></p>
+                    </div>
+                    <aside class="notes">
+                        The snacks are killing us. The pizza is poison. The gluten in the pizza might be poison? The sugar in the tomato sauce is definitely poison. Preservatives are poison. Also, your desk chair is poison. Fatness is the oncoming storm, and if you do not strap on your FitBit right now, then you only have yourself to blame.
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Individual action and agency</h2>
+                    <img src="img/cauliflower-crust-pizza.jpg" alt="Cauliflower crust pizza" class="noborder"/>
+                    <aside class="notes">
+                        We parse these messages in various ways. Soylent. Crossfit. Treadmill desks. Salads. Whole:30. CSA subscriptions. Paleo. YOLO. Strong filters. Stronger beers.
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Collective pattern-matching</h2>
+                    <img src="img/fat-sick-and-nearly-dead.jpg" alt="Promotional image for the film Fat, Sick, and Nearly Dead" class="noborder"/>
+                    <aside class="notes">
+                        But when all is said and done, no matter what we do with that information in our own lives, we are being encouraged to pattern match a non-fat body as a healthy body.
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Company-sponsored health</h2>
+                    <p><a href="http://articles.latimes.com/2012/may/11/business/la-fi-facebook-15-20120511"><em>Abs joining apps on tech firms' to-do list</em></a></p>
+                    <blockquote>
+                        "Some tech workers are sleeping with devices that measure their REM, loading up on low glycemic food to sustain energy levels naturally and working at desks while standing or walking on treadmills. Employers are aiding the effort."
+                    </blockquote>
+                    <aside class="notes">
+                        And to see a healthy body as a body of higher value. Not just at home, but in our workplaces.
+                    </aside>
+                </section>
+
+                <section>
+                    <p><a href="http://observer.com/2014/04/this-startup-will-disrupt-your-companys-lame-free-pizza-day/"><em>This Startup Will Disrupt Your Company's Lame Free Pizza Day</em></a></p>
+                    <aside class="notes">
+                        And the farther we go with this rhetoric, the more ableist it risks becoming.
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Who gets to participate in "health"?</h2>
+                    <img src="img/planks.png" alt="A meeting in progress, with all members planking" class="noborder"/>
+                    <aside class="notes">
+                        Talking to people who have read articles or anecdotes about teams that do planks or pushups to keep their meetings short, you may hear a few comments about the assumptions involved. Many other practices seem less extreme, and so we see them as relatively benign.
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Who gets to participate in "health"?</h2>
+                    <img src="img/invisible-disabilities.jpg" alt="Invisible disabilities including Crohn's, fibro, and arthritis" class="noborder"/>
+                    <p><small>© <a href="http://www.rickhansen.com/Blog/ArtMID/13094/ArticleID/81/Lets-Talk-About-Invisible-Disabilities">Rick Hansen Foundation</a></small></p>
+                    
+                    <aside class="notes">
+                        But what kind of bodies can use a standing desk or participate in a walking meeting? And why do we assume certain foods are healthy for all bodies, when one person's health food can be someone else's trigger for a symptom flare-up?
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Whose food is healthy?</h2>
+                    <blockquote>
+                        <p>"Indeed, the people who have the power to remake the urban landscape as they wish it to look often do so by making invisible those who they must rely upon to help shape it. Such a spatial process conjures the question: could taco trucks be included in the farm-to-fork agenda?"</p>
+                        <cite>- Robert Lemon, <a href="http://foodfatnessfitness.com/2016/03/29/farm-to-fork/">"Constructing a Farm-to-Fable"</a></cite>
+                    </blockquote>
+                    <aside class="notes">
+                        For that matter, what cultural assumptions do we make when we decide which foods are good or bad? Where does it have to come from? How much does it have to cost? What foods don't make the cut? And who are we willing to displace to remake the world we think we want?
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Bodies are central in the oppression of people</h2>
+                    <p>Recommended Reading</p>
+                    <ul>
+                        <li><em>Fat Shame: Stigma and the Fat Body in American Culture</em> - Amy Erdman Farrell</li>
+                        <li><em>To Show What an Indian Can Do: Sports at Native American Boarding Schools</em> - John Bloom</li>
+                    </ul>
+                    <aside class="notes">
+                        There is so much material on colonialism and white supremancy from the earliest days of nutritional studies that we have abstracted away from their origins but are still fully present in the way we talk about bodies and food. I did not give myself enough time to even scratch the surface of the ways that we oppress people using tools like food and exercise. I'm including some recommended reading in this slide to try to make it up to you.
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Everyday actions can build a universe we don't want</h2>
+                    <aside class="notes">A lot of the stuff I've been talking about is systematic, and I’m supposed to be giving you something to do at the end of all this.</aside>
+                </section>
+
+                <section>
+                    <h2>Fat Talk</h2>
+                    <p class="fragment">Arroyo and Harwood (2012) used the following as examples of fat talk, based on categories described by Ousley et al. (2008):</p>
+                    <aside class="notes">
+                        So we’re going to talk about fat talk. What is fat talk? It's a lot of things that probably sound familiar.
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>What one’s eating and exercise habits should be </h2>
+                    <ul>
+                        <li>I know I shouldn’t eat this brownie.</li>
+                        <li>I need to work out more.</li>
+                        <li>I should watch what I eat.</li>
+                    </ul>
+                    <aside class="notes">
+                        I know I shouldn’t eat this brownie. I need to work out more.
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Fears of becoming out of shape or overweight</h2>
+                    <ul>
+                        <li>I’m so worried that I’m going to get fat!</li>
+                        <li>I’m scared of what I will look like if I gain weight.</li>
+                        <li>I’d really hate to get fat.</li>
+                    </ul>
+                    <aside class="notes">
+                        I’m scared of what I will look like if I gain weight.
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>How one’s eating and exercise habits compare to others</h2>
+                    <ul>
+                        <li>Amber [Mike] works out twice as long as I do. I wish I had her [his] stamina so that I could lose weight.</li>
+                        <li>If I ate like Jennifer [John] does, I would lose weight.</li>
+                        <li>I wish I could eat as healthy as some of my friends do.</li>
+                    </ul>
+                    <aside class="notes">
+                        Mike works out twice as long as I do. I wish I had their stamina so that I could lose weight.
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Other people’s shape and appearance</h2>
+                    <ul>
+                        <li>Look how much weight she [he] has gained. She [he] looks terrible!</li>
+                        <li>I wish I was as skinny [toned] as Amber [Will].</li>
+                        <li>How does she [he] stay so thin?</li>
+                    </ul>
+                    <aside class="notes">
+                        Look how much weight he has gained. He looks terrible!
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>One’s own weight, shape or diet</h2>
+                    <ul>
+                        <li>I’m so fat</li>
+                        <li>My ass is huge</li>
+                        <li>I ate way too much yesterday</li>
+                    </ul>
+                    <aside class="notes">
+                        My ass is huge. I ate way too much yesterday.
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Supplements, meal replacements, or muscle-building strategies</h2>
+                    <ul>
+                        <li>I should try protein shakes to help lose weight</li>
+                        <li>I should skip meals to help me lose weight</li>
+                        <li>I’m going to try one of those weight loss pills</li>
+                    </ul>
+                    <aside class="notes">
+                        Or comments about supplements, meal replacements, or strategies to change your body. I didn't ask the researchers, but I'm pretty sure wearables and Soylent would qualify here.
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Fat talk is interpersonal</h2>
+                    <blockquote>
+                        <p>"...we must know that we can be free enough, sometimes, to share the things that scare us without fear of recriminations. We must be able to talk about what is messy or sad, to have hard conversations with colleagues who are driving us crazy. We can’t be focused just on efficiency."</p>
+                        <cite>- <a href="http://www.nytimes.com/2016/02/28/magazine/what-google-learned-from-its-quest-to-build-the-perfect-team.html">What Google Learned From Its Quest to Build the Perfect Team</a></cite>
+                    </blockquote>
+                    <aside class="notes">
+                        People use fat talk as a way to test people’s perceptions, to get reassurance, to get confirmation of suspicions, or to evaluate socially upward trajectories. Fat talk can be a means of absolution. Sometimes it can be a way to gain control by saying something bad about yourself before someone else does. It can be a way that we share what scares us.
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Fat talk is not unidirectional</h2>
+                    <blockquote class="fragment">
+                        <p>“There is a tendency in much of social science to understand causality as a unidirectional process, in part fed by the focus on experiments as the best tests of causality. However ... many causal relationships are bidirectional and mutually reinforcing.”</p>
+                        <cite>- Arroyo and Harwood (2012)</cite>
+                    </blockquote>
+                    <aside class="notes">
+                        The problem is that unlike Flux or Redux, fat talk is not a unidirectional flow. My research crushes, Arroyo and Harwood again: "There is a tendency in much of social science to understand causality as a unidirectional process, in part fed by the focus on experiments as the best tests of causality. However ... many causal relationships are bidirectional and mutually reinforcing."
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Fat talk is mutually reinforcing</h2>
+                    <p>There is a social contract of engagement</p>
+                    <aside class="notes">
+                        Fat talk is conversational. There is practically a set script. When someone says “I wish I was thinner”, we know what’s supposed to be said next. “Me too.” Or: “Nah, you look great.” Someone says “Ugh, I need to start going to the gym. I’m so weak,” is supposed to be followed by, “Yeah, I’m totally out of shape.” Or: “Yeah, but at least you had that salad.” When other people fat talk, we feel pressured to engage. Even if we feel awesome or indifferent.
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Fat talk mediates our abstractions and patterns</h2>
+                    <aside class="notes">
+                        Arroyo and Harwood found that fat talk is a mediator. Fat talk is what exists in between weight thoughts and mental health concerns, between chronic dieting and the possibility of an eating disorder. A good day and a bad one. Fat talk, whether reinforced or shut down, negotiates the way forward for vulnerable populations. Even when you aren’t the one initiating it.
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Who is assumed to be vulnerable?</h2>
+                    <p>The range of eating disorders, disordered eating, and those affected is a lot bigger than we tend to talk about.</p>
+                    <aside class="notes">
+                        When we talk about eating disorders, those vulnerable populations are often assumed to be women. Usually white women, and usually those with the means to seek treatment in the first place. Research demographics (and tech diversity measures) unfortunately rarely deviate from that expectation. The everyday assumption with eating disorders is also usually that we’re talking about anorexia or bulimia.
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Binge eating can affect our workplaces, too</h2>
+                    <blockquote>
+                        <p>“beyond the already well-documented findings that binge eating is associated with distress, depression, and obesity and its associated metabolic features our findings also indicate that binge eating is associated with work productivity impairment. Employers have been slow to recognize binge eating as an important health risk behavior"</p>
+                        <cite>- Striegel et al. (2012)</cite>
+                    </blockquote>
+                    <aside class="notes">
+                        Binge eating is associated with depression, and with obesity (if that's a thing that concerns you), but also with work productivity impairment. In a workplace culture that often waxes on about 10x and flow, employers don't seem to recognize how much this and other eating disorders can affect their workforce.
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Binge eating affects all genders</h2>
+                    <blockquote>
+                        <p>“Finally, few differences were found between men and women who binge eat. Eating disorders still go largely undetected and untreated, but especially so in men."</p>
+                        <cite>- Striegel et al. (2012)</cite>
+                    </blockquote>
+                    <aside class="notes">
+                        If you are thinking that because tech has so few women, think again. Tech is overly full of men, but those men are also at risk for or have already have an eating disorder, and it is negligent to not talk about that.
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Yes, all genders (not "both")</h2>
+                    <p>Eating disorder researchers often neglect the health and wellness needs of trans and non-binary people</p>
+                    <aside class="notes">
+                        I also have to tell you that research in this area is a big ol’ pile of gender binaries. Science is made up of scientists who are regular people, and many of the people responsible for educating us need to educate themselves.
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>What to do about fat talk</h2>
+                    <p>Can you not?</p>
+                    <p>No, seriously, try a No-Fat-Talk:30</p>
+                    <aside class="notes">
+                        If you find yourself saying a lot of fat talk yourself, you don't have to love your body, your workout, or your food choices. You just have to pause your self-talk. Try doing it for a week. Challenge yourself to do it for a month.
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Consider the implications of certain body positive phrases</h2>
+                    <ul>
+                        <li>Your Body Is Already Perfect</li>
+                        <li>All Bodies Are Good Bodies</li>
+                        <li>Don’t Change Your Body – Change Your Perspective</li>
+                        <li>There’s Nothing Wrong with Your Body – There’s Something Wrong with Society</li>
+                    </ul>
+                    <p><small>- great list by <a href="http://everydayfeminism.com/2016/03/body-positive-trans-inclusive/">Sam Dylan Finch</a></small></p>
+                    <aside class="notes">
+                        Bodies are not a fixed point or a source of perfect truth. Sometimes bodies are problematic for us. Sometimes bodies have to change.
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>It's okay to fully disengage</h2>
+                    <p>You don't have to be body positive to mitigate the harmful effects of fat talk</p>
+                    <aside class="notes">
+                        And what if you don’t feel like you know someone well enough to respond to their fat talk that way? It may sound awkward if you’re not used to it, but you really can just leave them hanging. The next time someone complains about or justifies their food choice to you, change the subject. Ask about their dog or their kid. Ask what they’ve been working on.
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>You don't have to love your body to be valued.</h2>
+                    <aside class="notes">
+                        You are never obligated to love anything, including your body.
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Emphasize care and agency over perfection</h2>
+                    <ul>
+                        <li>All bodies have value. All bodies deserve care.</li>
+                        <li>Don’t let society tell you that your body makes you less than</li>
+                    </ul>
+                    <aside class="notes">
+                        Some counter-examples from Sam Dylan Finch’s article: All bodies have value. All bodies deserve care. Don’t let society tell you that your body makes you less than.
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Employers: don't penalize or reward food and body decisions</h2>
+                    <p>Be flexible. Pre-emptively encourage personal choices.</p>
+                    <aside class="notes">
+                        If you’re an employer or a manager, the people who work for you don’t owe you their health, but you owe them theirs. And that includes mental health. Don’t penalize or reward food choices or desk choices. If you offer free snacks, offer a variety, not just the so-called healthy ones. If you do meetups, keep doing the pizza but offer some alternatives like nuts or veggies, or make it explicitly chill to bring your own food. Maybe even try a potluck and see what happens. 
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>You are amazing.</h2>
+                    <aside class="notes">
+                        Embodiment is hard. It is harder for some bodies than others. But I want you to know that you are amazing. Get out there. Maybe eat some snacks, or don't. Let's focus on those random interactions, and let's generate new ideas. 
+                    </aside>
+                </section>
+
+                <section>
+                    <img src="img/touch-a-spider.png" alt="Hyperbole and a Half: maybe we will all touch spiders" class="noborder"/>
+                    <p><small>- <a href="http://hyperboleandahalf.blogspot.com/2011/10/adventures-in-depression.html">Hyperbole and a Half</a>, Allie Brosh</small></p>
+                    <aside class="notes">
+                        Touch a spider.
+                    </aside>
+                </section>
+
+                <section>
+                    <h1>Thanks! &#127829;</h1>
+                    <h4><a href="http://twitter.com/hootbot">@hootbot</a></h4>
+                </section>
+
+            </div>
+        <footer>
+        <div class="copyright">
+          <a href="http://hootbot.technology">Christine Bryant-Ryback</a> - <a href="http://twitter.com/hootbot">@hootbot</a> - OSFeels 2016
+        </div>
+      </footer>
+        </div>
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.min.js"></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+                showNotes: true,
+
+                transition: 'none', // none/fade/slide/convex/concave/zoom
+
+                // Optional reveal.js plugins
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true },
+                    { src: 'plugin/notes/notes.js', async: true },
+                    { src: 'plugin/accessibility-helper/js/accessibility-helper.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+        </script>
+        <script>
+            window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+            ga('create','UA-77808942-1','auto');ga('send','pageview')
+        </script>
+        <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+    </body>
+</html>

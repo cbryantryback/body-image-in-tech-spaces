@@ -1,0 +1,24 @@
+.#*
+*~
+\#*
+*.sw[p|o]
+.DS_Store
+__MACOSX
+node_modules
+npm-debug.log
+dist
+docs
+.sass-cache
+.grunt
+.bower
+app/*.html
+app/*.xml
+app/public/*
+app/vendor/packages/*
+_SpecRunner.html
+test/junit/*
+*.tar.gz
+
+# developer misc
+.screenrc
+.idea
