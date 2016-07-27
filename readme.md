@@ -6,4 +6,4 @@ Tech is notoriously bad at talking about intersections of class, disability, rac
 
 ## Format
 
-This repo was forked from [girldevelopit/gdi-slides-template](https://github.com/girldevelopit/gdi-slides-template), which was forked from [hakimel/reveal.js](https://github.com/hakimel/reveal.js) (v2.6.2). License file for reveal.js is inside [/js/].
+This repo was forked from [girldevelopit/gdi-slides-template](https://github.com/girldevelopit/gdi-slides-template), which was forked from [hakimel/reveal.js](https://github.com/hakimel/reveal.js) (v2.6.2). License file for reveal.js is inside [/js/](/js/).
