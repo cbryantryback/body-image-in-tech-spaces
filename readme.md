@@ -7,3 +7,7 @@ Tech is notoriously bad at talking about intersections of class, disability, rac
 ## Format
 
 This repo was forked from [girldevelopit/gdi-slides-template](https://github.com/girldevelopit/gdi-slides-template), which was forked from [hakimel/reveal.js](https://github.com/hakimel/reveal.js) (v2.6.2). License file for reveal.js is inside [/js/](/js/).
+
+## Running the full presentation
+
+See the [https://github.com/hakimel/reveal.js#full-setup](reveal.js) instructions for running the full-featured version in a browser. Once you're viewing the slides successfully at http://localhost:8000/ you can press the `s` key to view the [https://github.com/hakimel/reveal.js#speaker-notes](speaker notes).
